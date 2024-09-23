@@ -22,11 +22,12 @@ def init_console():
             daftar_buku = file.readlines()
             if daftar_buku == []:
                 print("Isi Database kosong, silahkan isi data baru:")
-                Operasi.bikin_data("w")
+                Operasi.create("w")
             else:
                 return None 
 
     except:
         print("\n" + 102*"=")
-        print("Database tidak tersedia. Silahkan membuat database baru")
-        Operasi.bikin_data("w")
+        print("Database tidak tersedia. Silahkan membuat database baru.")
+        print("Masukan data buku:")
+        Operasi.create("w")

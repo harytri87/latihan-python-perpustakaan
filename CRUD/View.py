@@ -31,7 +31,7 @@ def create_console():
     print("Silahkan masukan data buku")
     print(f"{'! Masukan 0 untuk batal !':^26}")
     print(f"{'- - - -':^26}")
-    status = Operasi.bikin_data("a")
+    status = Operasi.create("a")
     if status == True:
         read_console()
         print("Data berhasil ditambahkan")

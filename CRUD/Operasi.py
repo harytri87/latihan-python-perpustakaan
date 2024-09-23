@@ -5,7 +5,7 @@ from .Utilitas import random_string, bikin_kunci_primer, validasi_tahun
 import time
 
 # Bikin data baru
-def bikin_data(MODE):               # mode "w" write atau "a" append
+def create(MODE):               # mode "w" write atau "a" append
     judul = input("Judul: ")
     match judul:
         case "0": return "batal"
@@ -83,14 +83,14 @@ def update(nomor_buku, pk, tgl_ditambahkan, judul, penulis, tahun):
             # print(f"(operasi.py update) data[nomor_buku - 1]: {data[nomor_buku - 1]}")
             # print(f"(operasi.py update) data_buku: {data_buku}")
     except:
-        return print("(operasi.py update) Data tidak ditemukan")
+        return print("Data tidak ditemukan")
     
     try:
         with open("data.txt", "w", encoding="utf-8") as file:
             file.write(str(data_buku))          # semua isi file.txt diubah/overwrite sama data_buku yg di atas
-            return print("(operasi.py update) Data berhasil diubah")
+            return print("Data berhasil diubah")
     except:
-        return print("(operasi.py update) Data gagal diubah")
+        return print("Data gagal diubah")
 
 
 # Menghapus data sesuai index
@@ -102,11 +102,11 @@ def delete(nomor_buku):
             data.pop(nomor_buku - 1)    # ini yg beda sama update
             data_buku = "".join(data)
     except:
-        return print("(operasi.py delete) Data tidak ditemukan")
+        return print("Data tidak ditemukan")
 
     try:
         with open("data.txt", "w", encoding="utf-8") as file:
             file.write(str(data_buku))
             return print("Data berhasil dihapus")
     except:
-        return print("(operasi.py delete) Data gagal dihapus")
+        return print("Data gagal dihapus")
